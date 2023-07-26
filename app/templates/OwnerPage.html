@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+{% with messages = get_flashed_messages() %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if user %}
+    <title> Hello {{ user.owner }}</title>
+    {% endif %}
+</head>
+
+<body>
+<div>
+ {% for item in items %}
+    <button><br><div><p> {{item.item}} Discription :{{item.discription}}</p></div><br></button>
+    {% endfor %}
+</div>
+
+{% endwith %}
+</body>
+</html>

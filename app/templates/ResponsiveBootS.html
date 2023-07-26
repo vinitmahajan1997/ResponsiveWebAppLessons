@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Responsive BootStrap Page</title>
+</head>
+
+<body>
+  <div class="container ">
+    <div class="row justify-content-center">
+      <div class="col-sm-2"><button class="btn btn-block">column1</button></div>
+      <div class="col"><button class="btn btn-block">column2</button></div>
+    </div>
+    <div class="container">
+    <h1 class="text-center my-4">Number Search</h1>
+    <div class="form-group">
+      <label for="searchInput">Search for a number (1 to 10):</label>
+      <input type="number" class="form-control" id="searchInput" min="1" max="10" placeholder="Enter a number">
+    </div>
+    <div id="searchResult" class="text-center mt-3"></div>
+  </div>
+  </div>
+</body>
+<script>
+  function searchNumber() {
+  const searchInput = document.getElementById('searchInput').value;
+  const searchResult = document.getElementById('searchResult');
+
+  // Check if the input is a valid number between 1 and 10
+  if (searchInput >= 1 && searchInput <= 10) {
+    searchResult.innerText = `Number ${searchInput} found!`;
+  } else {
+    searchResult.innerText = 'Number not found. Please enter a valid number between 1 and 10.';
+  }
+}
+
+// Event listener for the search button click
+document.getElementById('searchInput').addEventListener('change', searchNumber);
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
